@@ -4,7 +4,7 @@ import Product from './Product';
 import { useSelector } from 'react-redux';
 
 const Products = () => {
-    const cartItems = useSelector(state => state);
+    const cartItems = useSelector(state => state.productItems);
     return (
         <div>
             <div className="productContainer" id="lws-productContainer">

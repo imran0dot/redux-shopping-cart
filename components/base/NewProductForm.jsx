@@ -1,5 +1,5 @@
 'use client'
-import { addNewProduct } from '@/redux/cart/action';
+import { addNewProduct } from '@/redux/items/action';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
