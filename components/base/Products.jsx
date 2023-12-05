@@ -1,11 +1,16 @@
+'use client'
 import React from 'react';
 import Product from './Product';
+import { useSelector } from 'react-redux';
 
 const Products = () => {
+    const cartItems = useSelector(state => state);
     return (
         <div>
             <div className="productContainer" id="lws-productContainer">
-                <Product />
+                {
+                    cartItems?.map(cartItem => <Product cartItem={cartItem} key={cartItem?.id} />)
+                }
             </div>
         </div>
     );
