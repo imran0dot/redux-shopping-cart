@@ -5,8 +5,9 @@ import { useDispatch } from 'react-redux';
 const Product = ({ cartItem }) => {
     const { id, name, category, price, quantity, image } = cartItem;
     const dispatch = useDispatch();
+
     const addToCartBtnHandler = () => {
-        dispatch(addToCart(cartItem));
+        dispatch(addToCart(cartItem, id));
     }
     return (
         <div className="lws-productCard">

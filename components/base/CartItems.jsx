@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 
 const CartItems = () => {
     const cartItems = useSelector(state => state.cartItems);
+    console.log(cartItems);
     return (
         <div className="space-y-6">
             {

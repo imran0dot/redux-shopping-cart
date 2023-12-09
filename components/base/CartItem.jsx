@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CartItem = ({ cartItem }) => {
-    const { id, name, category, quenity, price, image } = cartItem;
+    const { id, name, category, quenity, price, image, cartQuantity } = cartItem;
     return (
         <div className="cartCard">
             <div className="flex items-center col-span-6 space-x-6">
@@ -20,7 +20,7 @@ const CartItem = ({ cartItem }) => {
                     <button className="lws-incrementQuantity">
                         <i className="text-lg fa-solid fa-plus"></i>
                     </button>
-                    <span className="lws-cartQuantity">{quenity}</span>
+                    <span className="lws-cartQuantity">quantity {cartQuantity ? cartQuantity : 1}</span>
                     <button className="lws-decrementQuantity">
                         <i className="text-lg fa-solid fa-minus"></i>
                     </button>

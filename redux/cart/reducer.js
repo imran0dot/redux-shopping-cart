@@ -3,8 +3,22 @@ const { ADD_TO_CART } = require("./actionType")
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+
         case ADD_TO_CART:
-            return [
+            console.log(state);
+            if (state.length > 0) {
+               return state.map(item => {
+                    if (item.id === action.payload.id) {
+                        const cartQuantity = item?.cartQuantity ? item.cartQuantity + 1 : 1;
+                        item.cartQuantity = cartQuantity;
+                        return item
+                    }
+                    else return (
+                        item,
+                        action.payload
+                    )
+                })
+            } return [
                 ...state,
                 action.payload
             ]
@@ -12,6 +26,8 @@ const reducer = (state = initialState, action) => {
         default:
             return state
     }
+
+
 }
 
 
